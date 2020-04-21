@@ -1,0 +1,59 @@
+@import '../src/reset.scss';
+
+/*********************** COLORS ****************************/
+
+$green: #6DBE48;
+$dark-green: #334D28;
+$black: #1B1B1B;
+$dark-grey: #747474;
+$light-grey: #E9EBE9;
+$white: #FFFFFF;
+$light-orange: #FFF3CD;
+$light-brown: #BFAC6C;
+
+/*********************** SPACING ****************************/
+
+.m-50 {
+    &.top {
+        margin-top: 50px;
+    }
+    &.bottom {
+        margin-bottom: 50px;
+    }
+    &.right {
+        margin-right: 50px;
+    }
+    &.left {
+        margin-left: 50px;
+    }
+}
+
+.m-30 {
+    &.top {
+        margin-top: 30px;
+    }
+    &.bottom {
+        margin-bottom: 30px;
+    }
+    &.right {
+        margin-right: 30px;
+    }
+    &.left {
+        margin-left: 30px;
+    }
+}
+
+.p-50 {
+    &.top {
+        padding-top: 50px;
+    }
+    &.bottom {
+        padding-bottom: 50px;
+    }
+    &.right {
+        padding-right: 50px;
+    }
+    &.left {
+        padding-left: 50px;
+    }
+}

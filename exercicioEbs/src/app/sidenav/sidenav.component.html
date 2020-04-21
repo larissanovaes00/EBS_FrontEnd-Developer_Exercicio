@@ -1,0 +1,20 @@
+<nav class="sidenav col-auto" #sideNav>
+    <div class="logo d-flex justify-content-center" (click)="toggleSideNav()">
+        <img src="../../assets/img/icons8-share.svg" alt="">
+    </div>
+    <ul>
+        <li *ngFor="let icon of classesIcons" class="sidenav-item">
+            <div class="d-inline-flex w-100">
+                <a><i class="glyphicon" [class]="icon.icon" (click)="toggleSideNav()"></i></a>
+                <div *ngIf="sideNavOpened" class="w-100">
+                    <div class="d-flex w-100 justify-content-between">
+                        <span class="sidenav-label">{{ icon.nome }}</span>
+                        <a>
+                            <i class="glyphicon glyphicon-menu-down"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</nav>
