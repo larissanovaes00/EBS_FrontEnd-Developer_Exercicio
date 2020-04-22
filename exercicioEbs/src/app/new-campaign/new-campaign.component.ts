@@ -11,6 +11,9 @@ export class NewCampaignComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
+  fourFormGroup: FormGroup;
+  fiveFormGroup: FormGroup;
 
   constructor(private _formBuilder: FormBuilder) {}
 
@@ -20,6 +23,15 @@ export class NewCampaignComponent implements OnInit {
     });
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
+    });
+    this.thirdFormGroup = this._formBuilder.group({
+      thirdCtrl: ['', Validators.required]
+    });
+    this.fourFormGroup = this._formBuilder.group({
+      fourCtrl: ['', Validators.required]
+    });
+    this.fiveFormGroup = this._formBuilder.group({
+      fiveCtrl: ['', Validators.required]
     });
   }
 

@@ -52,17 +52,6 @@ toggleSideNav(){
   }
 }
 
-toggleSubcategories(div){
-  if(!this.subcategoriesOpened){
-  this.subcategoriesOpened = true;
-  // this.subcategories.nativeElement.classList.remove('hidden');
-  } else {
-    this.subcategoriesOpened = false;
-    // this.subcategories.nativeElement.classList.add('hidden');
-  }
-}
-
-
   constructor() { }
 
   ngOnInit(): void {

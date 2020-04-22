@@ -1,38 +1,72 @@
-<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-</button>
-<mat-horizontal-stepper [linear]="isLinear" #stepper>
-    <mat-step [stepControl]="firstFormGroup">
-        <form [formGroup]="firstFormGroup">
-            <ng-template matStepLabel>Fill out your name</ng-template>
-            <mat-form-field>
-                <mat-label>Name</mat-label>
-                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-            </mat-form-field>
-            <div>
-                <button mat-button matStepperNext>Next</button>
-            </div>
-        </form>
-    </mat-step>
-    <mat-step [stepControl]="secondFormGroup">
-        <form [formGroup]="secondFormGroup">
-            <ng-template matStepLabel>Fill out your address</ng-template>
-            <mat-form-field>
-                <mat-label>Address</mat-label>
-                <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
-            </mat-form-field>
-            <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
-            </div>
-        </form>
-    </mat-step>
-    <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-        <p>You are now done.</p>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="stepper.reset()">Reset</button>
-        </div>
-    </mat-step>
-</mat-horizontal-stepper>
+<div class="c-topbar w-100 d-flex justify-content-between align-items-center">
+    <h1>New Campaign</h1>
+    <div class="d-none d-sm-flex flex-wrap">
+        <button type="button" class="btn btn-outline-dark btn-back">Back</button>
+        <button type="button" class="btn btn-outline-dark btn-launch">Launch Campaign</button>
+    </div>
+</div>
+<div class="container ">
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup" class="p-mobile-reset">
+                <ng-template matStepLabel>Campaign</ng-template>
+                <div class="c-form-title d-flex justify-content-between align-items-center">
+                    <h4>Campaign general information</h4>
+                    <div class="checkbox-container">
+                        <span class="checkbox-text">Anonymous</span>
+                        <label class="checkbox-label">
+                        <input type="checkbox">
+                        <span class="checkbox-custom rectangular"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group m-20 top">
+                    <label for="campaignName">Name *</label>
+                    <input type="text" class="form-control" id="campaignName" placeholder="Campaign Name">
+                </div>
+                <div class="form-group m-20 top">
+                    <label for="exampleFormControlSelect1">Choose a campaign type *</label>
+                    <div class="alert alert-warning" role="alert">
+                        Select the type of campaign before moving to the next step
+                    </div>
+                    <div class="btn-group-toggle col-12 col-sm-6 p-0 campaign-type-options" data-toggle="buttons">
+                        <label class="btn active d-block">
+                            <input type="radio" name="options" id="option1" autocomplete="off" checked>
+                            <a><i class="glyphicon glyphicon-envelope" ></i><span>Email Phishing</span></a>
+                        </label>
+                        <label class="btn d-block">
+                            <input type="radio" name="options" id="option2" autocomplete="off"> 
+                            <a><i class="glyphicon glyphicon-comment"></i><span>SMS Phishing</span></a>
+                        </label>
+                        <label class="btn d-block">
+                            <input type="radio" name="options" id="option3" autocomplete="off">
+                            <a><i class="glyphicon glyphicon-qrcode"></i><span>Ransomware</span></a>
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Library</ng-template>
+                <h2>Step 2</h2>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="thirdFormGroup">
+            <form [formGroup]="thirdFormGroup">
+                <ng-template matStepLabel>Awareness</ng-template>
+                <h2>Step 3</h2>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="fourFormGroup">
+            <form [formGroup]="fourFormGroup">
+                <ng-template matStepLabel>Targets</ng-template>
+                <h2>Step 4</h2>
+            </form>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Send</ng-template>
+            <h2>Finish</h2>
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>

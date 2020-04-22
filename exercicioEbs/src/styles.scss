@@ -43,6 +43,8 @@ $exercicioEbs-theme: mat-light-theme($exercicioEbs-primary, $exercicioEbs-accent
 
 /* You can add global styles to this file, and also import other style files */
 
+@import './generics.scss';
+@import '../src/app/new-campaign/new-campaign.component.scss';
 html,
 body {
     height: 100%;
@@ -60,5 +62,11 @@ body {
 
 body {
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mat-h4,
+.mat-subheading-1,
+.mat-typography h4 {
+    margin-bottom: 0;
 }

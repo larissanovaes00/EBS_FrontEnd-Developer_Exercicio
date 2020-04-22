@@ -1,4 +1,24 @@
 @import '../../generics.scss';
 .c-home {
     height: calc(100vh - 50px);
+    .btn-redirect {
+        box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, .12);
+        border: none;
+        border-radius: 3px;
+        width: 100px;
+        height: 50px;
+        background: $green;
+        color: $white;
+        font-size: 15px;
+        font-weight: 500;
+        font-family: Roboto;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: center;
+        padding: 15px 20px;
+        transition: 0.4s;
+        &:hover {
+            background: $black;
+        }
+    }
 }

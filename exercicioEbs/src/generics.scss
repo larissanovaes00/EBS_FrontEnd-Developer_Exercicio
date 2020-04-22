@@ -1,8 +1,10 @@
 @import '../src/reset.scss';
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
 
 /*********************** COLORS ****************************/
 
 $green: #6DBE48;
+$light-green: #D2ECC7;
 $dark-green: #334D28;
 $black: #1B1B1B;
 $dark-grey: #747474;
@@ -43,6 +45,21 @@ $light-brown: #BFAC6C;
     }
 }
 
+.m-20 {
+    &.top {
+        margin-top: 20px;
+    }
+    &.bottom {
+        margin-bottom: 20px;
+    }
+    &.right {
+        margin-right: 20px;
+    }
+    &.left {
+        margin-left: 20px;
+    }
+}
+
 .p-50 {
     &.top {
         padding-top: 50px;
@@ -56,4 +73,141 @@ $light-brown: #BFAC6C;
     &.left {
         padding-left: 50px;
     }
+}
+
+.p-mobile-reset {
+    @media(max-width: 575px) {
+        padding: 0;
+    }
+}
+
+.d-flex {
+    flex-wrap: wrap;
+}
+
+
+/*********************** CUSTOM CHECKBOX ****************************/
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    .checkbox-text {
+        margin-right: 10px;
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 575px) {
+    .checkbox-container {
+        margin-top: 10px;
+    }
+}
+
+.checkbox-label {
+    display: block;
+    position: relative;
+    margin: auto;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 20px;
+    height: 20px;
+    width: 20px;
+    clear: both;
+}
+
+.checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-label .checkbox-custom {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    border: 2px solid $dark-grey;
+    border-radius: 2px;
+}
+
+.checkbox-label input:checked~.checkbox-custom {
+    background-color: $green;
+    -webkit-transform: rotate(0deg) scale(1);
+    -ms-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+    border: 2px solid $green;
+    border-radius: 2px;
+}
+
+.checkbox-label .checkbox-custom::after {
+    position: absolute;
+    content: "";
+    left: 10px;
+    top: 10px;
+    height: 0px;
+    width: 0px;
+    border: solid $white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(0deg) scale(0);
+    -ms-transform: rotate(0deg) scale(0);
+    transform: rotate(0deg) scale(0);
+    opacity: 1;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+.checkbox-label input:checked~.checkbox-custom::after {
+    -webkit-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+    opacity: 1;
+    left: 6px;
+    top: 1px;
+    width: 6px;
+    height: 12px;
+    border: solid $white;
+    border-width: 0 2px 2px 0;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.checkbox-label .checkbox-custom::before {
+    position: absolute;
+    content: "";
+    left: 10px;
+    top: 10px;
+    width: 0px;
+    height: 0px;
+    border: 2px solid #FFFFFF;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+}
+
+.checkbox-label input:checked~.checkbox-custom::before {
+    left: -3px;
+    top: -3px;
+    width: 24px;
+    height: 24px;
+    -webkit-transform: scale(3);
+    -ms-transform: scale(3);
+    transform: scale(3);
+    opacity: 0;
+    z-index: 999;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
 }

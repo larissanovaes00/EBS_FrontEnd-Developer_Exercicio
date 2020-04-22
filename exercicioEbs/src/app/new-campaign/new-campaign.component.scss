@@ -1,7 +1,109 @@
+@import '../../generics.scss';
 .mat-stepper-horizontal {
     margin-top: 8px;
 }
 
 .mat-form-field {
     margin-top: 16px;
+}
+
+.btn-outline-dark {
+    height: 35px;
+    border-radius: 50px;
+    font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
+}
+
+.btn-back {
+    min-width: 70px;
+    margin-right: 10px;
+}
+
+.btn-launch {
+    padding: 0px 20px;
+}
+
+@media(max-width: 1200px) {
+    .btn-outline-dark,
+    .btn-back {
+        width: auto;
+    }
+}
+
+h1 {
+    margin-bottom: 0px;
+}
+
+.c-topbar {
+    padding: 15px 20px;
+    background-color: $light-grey;
+    border-bottom: 1px solid lightgrey;
+}
+
+.mat-step-header .mat-step-icon-selected,
+.mat-step-header .mat-step-icon-state-done,
+.mat-step-header .mat-step-icon-state-edit {
+    background-color: $green !important;
+    color: $black !important;
+}
+
+.c-form-title {
+    border-bottom: solid 1px $dark-grey;
+    margin-top: 50px;
+    padding-bottom: 5px;
+    h4 {
+        font: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        ;
+    }
+}
+
+.form-control {
+    padding: 20px 10px;
+    font-size: 12px;
+    &:focus {
+        box-shadow: none;
+        border-color: $green;
+    }
+}
+
+.alert-warning {
+    padding: 10px 10px;
+    font-size: 12px;
+}
+
+.campaign-type-options {
+    label {
+        padding: 20px 15px;
+        margin-bottom: 5px;
+        max-width: 280px;
+        transition: 0.4s;
+        color: $black;
+        &:hover {
+            background: $light-green;
+        }
+        a {
+            display: flex;
+            align-items: center;
+            line-height: 1.19;
+        }
+        .glyphicon {
+            color: $green;
+            font-size: 17px;
+            margin-right: 10px;
+        }
+        span {
+            font-size: 13px;
+            color: $black;
+        }
+    }
+    .btn.active {
+        background: $light-green;
+        box-shadow: none;
+    }
+    .btn:focus,
+    .btn.focus {
+        box-shadow: none;
+        outline: 0;
+    }
 }

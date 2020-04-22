@@ -3,11 +3,32 @@ a {
     color: initial;
 }
 
-ul {
+ul,
+h1 {
     padding: 0;
     margin: 0;
 }
 
 li {
     list-style: none;
+}
+
+label {
+    font-weight: normal;
+}
+
+.btn-outline-dark:not(:disabled):not(.disabled):active:focus,
+.btn-outline-dark:not(:disabled):not(.disabled).active:focus,
+.show>.btn-outline-dark.dropdown-toggle:focus {
+    box-shadow: none;
+    outline: 0;
+}
+
+@media(max-width: 575px) {
+    .mat-horizontal-content-container {
+        padding: 0!important;
+    }
+    .mat-step-header:first-of-type {
+        padding-left: 0 !important;
+    }
 }
