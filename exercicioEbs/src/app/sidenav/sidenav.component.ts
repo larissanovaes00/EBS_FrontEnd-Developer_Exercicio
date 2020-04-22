@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { MenuNavService } from '../menu-nav/menu-nav.service';
 
 @Component({
@@ -40,9 +40,17 @@ export class SidenavComponent implements OnInit {
 		{ 'icon': 'glyphicon-download-alt', 'nome':'TESTE'},
 		{ 'icon': 'glyphicon-home', 'nome':'TESTE'}
 	]
+  
+  constructor( private menuSer: MenuNavService ) { }
 
-  	toggleSideNav(){
-		if(!this.sideNavOpened){
+	ngOnInit(): void {
+		this.menuSer.getEvent().subscribe(event => {
+		this.toggleSideNav(event)
+		})
+	}
+
+  toggleSideNav(event){
+		if(event){
 			this.sideNavOpened = true;
 			this.sideNav.nativeElement.classList.add('sidenav-active')
 		} else {
@@ -50,13 +58,4 @@ export class SidenavComponent implements OnInit {
 			this.sideNav.nativeElement.classList.remove('sidenav-active')
 		}
 	}
-
-  	constructor( private menuSer: MenuNavService ) { }
-
-	ngOnInit(): void {
-		this.menuSer.getEvent().subscribe(e => {
-			this.toggleSideNav()
-		})
-	}
-
 }

@@ -1,5 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { BreakpointObserver } from '@angular/cdk/layout';
+import { Component} from '@angular/core';
 import { MenuNavService } from './menu-nav.service';
 
 @Component({
@@ -9,15 +8,10 @@ import { MenuNavService } from './menu-nav.service';
 })
 
 export class MenuNavComponent {
-
-  @Output() open = new EventEmitter();
-
-  constructor(
-    private breakpointObserver: BreakpointObserver,
-    private menuNavService: MenuNavService
-  ) {}
+  
+constructor(private menuNavService: MenuNavService) {}
 
 	openSideMenu(){
-	this.menuNavService.openSideNav(true)
+	  this.menuNavService.toggleMenu()
 	}
 }
