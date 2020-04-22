@@ -4,6 +4,7 @@
     background-color: #1B1B1B;
     padding: 0px;
     position: absolute;
+    top: 50px;
     height: calc(100vh + 200px);
     overflow: scroll;
     z-index: 9;
@@ -18,7 +19,8 @@
         color: $white;
     }
     .logo {
-        margin-bottom: 80px;
+        margin-bottom: 50px;
+        margin-top: 10px;
         padding-left: 12px;
         padding-top: 10px;
         padding-right: 15px;

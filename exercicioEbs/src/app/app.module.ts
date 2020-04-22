@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MenuNavComponent,
     HomeComponent,
     NewCampaignComponent
+
   ],
   imports: [
     BrowserModule,
